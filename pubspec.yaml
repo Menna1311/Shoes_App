@@ -38,6 +38,7 @@ dependencies:
   go_router: ^14.2.7
   font_awesome_flutter: ^10.7.0
   equatable: ^2.0.5
+  dio: ^5.7.0
 
 dev_dependencies:
   flutter_test:
