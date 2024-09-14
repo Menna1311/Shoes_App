@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shoes_shop/constant.dart';
 import 'package:shoes_shop/features/home/data/models/product_model/product_model.dart';
@@ -26,10 +27,10 @@ class ProductItem extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   child: Center(
-                    child: Image.network(
+                    child: CachedNetworkImage(
+                      imageUrl: product.image!,
                       height: 120,
                       fit: BoxFit.contain,
-                      product.image!,
                       width: double.infinity,
                     ),
                   ),
