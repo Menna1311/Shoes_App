@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
-  final String baseUrl = 'https://fakestoreapi.com/';
+  final String baseUrl = 'https://fakestoreapi.com';
   final Dio dio;
 
   ApiService(this.dio);

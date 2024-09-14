@@ -4,23 +4,24 @@ import 'package:shoes_shop/constant.dart';
 class PriceItem extends StatelessWidget {
   const PriceItem({
     super.key,
+    required this.price,
   });
-
+  final double price;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text(
-          'EGP 1,200',
-          style: TextStyle(
+          'EGP $price',
+          style: const TextStyle(
             color: kTextColor,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 24,
         ),
-        Text(
-          '2,000 EGP',
+        const Text(
+          '0,000 EGP',
           style: TextStyle(
             decoration: TextDecoration.lineThrough,
             color: Color.fromARGB(255, 138, 197, 249),

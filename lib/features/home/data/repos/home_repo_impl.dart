@@ -14,8 +14,7 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(endpoint: 'products');
       List<ProductModel> products = [];
       for (var item in data) {
-        products.add(ProductModel.fromJson(
-            item)); // Assuming ProductModel has a fromJson method
+        products.add(ProductModel.fromJson(item));
       }
       return right(products);
     } on Exception catch (e) {

@@ -4,17 +4,18 @@ import 'package:shoes_shop/constant.dart';
 class ReviewItem extends StatelessWidget {
   const ReviewItem({
     super.key,
+    required this.rating,
   });
-
+  final double rating;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text(
-          'Review (4.6)',
-          style: TextStyle(color: kTextColor, fontSize: 12),
+          'Review ($rating)',
+          style: const TextStyle(color: kTextColor, fontSize: 12),
         ),
-        Icon(
+        const Icon(
           Icons.star,
           color: Colors.yellow,
           size: 20,

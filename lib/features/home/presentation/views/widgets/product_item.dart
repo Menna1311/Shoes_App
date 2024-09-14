@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_shop/constant.dart';
+import 'package:shoes_shop/features/home/data/models/product_model/product_model.dart';
 import 'package:shoes_shop/features/home/presentation/views/widgets/product_details.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
-
+  const ProductItem({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,29 +25,35 @@ class ProductItem extends StatelessWidget {
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
                   ),
-                  child: Image.asset(
-                    'assets/images/test.jpg',
-                    width: double.infinity,
+                  child: Center(
+                    child: Image.network(
+                      height: 120,
+                      fit: BoxFit.contain,
+                      product.image!,
+                      width: double.infinity,
+                    ),
                   ),
                 ),
                 Positioned(
                   top: 8,
                   right: 8,
-                  child: GestureDetector(
-                    onTap: () {},
+                  child: Material(
+                    elevation: 4,
+                    shape: const CircleBorder(),
                     child: CircleAvatar(
-                        radius: 16,
-                        backgroundColor: Colors.white,
-                        child: Image.asset(
-                          'assets/images/love.png',
-                          height: 24,
-                          width: 24,
-                        )),
+                      radius: 16,
+                      backgroundColor: Colors.white,
+                      child: Image.asset(
+                        'assets/images/love.png',
+                        height: 24,
+                        width: 24,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-            const ProductDetails(),
+            ProductDetails(product: product),
           ],
         ),
       ),

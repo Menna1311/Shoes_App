@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoes_shop/constant.dart';
+import 'package:shoes_shop/features/home/data/models/product_model/product_model.dart';
 import 'package:shoes_shop/features/home/presentation/views/widgets/price_item.dart';
 import 'package:shoes_shop/features/home/presentation/views/widgets/review_item.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({
     super.key,
+    required this.product,
   });
-
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,29 +18,35 @@ class ProductDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Nike Air Jordan',
-            style: TextStyle(
+          Text(
+            product.title!,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
               color: kTextColor,
               fontSize: 14,
             ),
           ),
-          const Text(
-            'Nike shoes flexible for women',
+          Text(
+            product.description!,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
+            style: const TextStyle(
               color: kTextColor,
             ),
           ),
           const SizedBox(
             height: 5,
           ),
-          const PriceItem(),
+          PriceItem(
+            price: product.price!,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const ReviewItem(),
+              ReviewItem(
+                rating: product.rating!.rate!,
+              ),
               IconButton(
                 padding: EdgeInsets.zero,
                 icon: const Icon(
