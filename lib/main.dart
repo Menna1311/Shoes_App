@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_shop/features/home/presentation/views/home_view.dart';
+import 'package:shoes_shop/core/utils/app_routes.dart';
 
 void main() {
   runApp(const ShoesApp());
@@ -10,8 +10,9 @@ class ShoesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeView(),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoutes.router,
     );
   }
 }
