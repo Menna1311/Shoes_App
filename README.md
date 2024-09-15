@@ -9,6 +9,7 @@ A simple store app built with **Flutter**, implementing features like product li
 - **Repository pattern** for data handling.
 - **MVVM architecture** for separation of concerns.
 - **Cubit** for state management.
+- **GetIt** for dependency injection.
 
 
 
