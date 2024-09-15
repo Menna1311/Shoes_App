@@ -1,16 +1,18 @@
-# shoes_shop
+# Store App
 
-A new Flutter project.
+A simple store app built with **Flutter**, implementing features like product listing, pricing, and reviews. This app demonstrates the use of popular Flutter design patterns and state management techniques.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Product listing with pricing and reviews.
+- Integration with an API using **Dio**.
+- **Repository pattern** for data handling.
+- **MVVM architecture** for separation of concerns.
+- **Cubit** for state management.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Screenshot](assets/images/screenshot.png)
+
+
+
